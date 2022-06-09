@@ -36,6 +36,8 @@ import * as blathersSVG from './resources/illustration/blathers.svg';
 import * as tomNookSVG from './resources/illustration/tom-nook.svg';
 import * as primeroSVG from './resources/illustration/primero.svg';
 
+
+
 // Camera stream video element
 let video;
 let videoWidth = 300;
@@ -133,10 +135,10 @@ function setupGui(cameras) {
   gui.add(guiState, 'avatarSVG', Object.keys(avatarSvgs)).onChange(() => parseSVG(avatarSvgs[guiState.avatarSVG]));
   multi.open();
 
-  let output = gui.addFolder('Controles');
+/*  let output = gui.addFolder('Controles');
   output.add(guiState.debug, 'showDetectionDebug');
   //output.add(guiState.debug, 'showIllustrationDebug');
-  output.open();
+  output.open();*/  
 }
 
 /**
