@@ -24,6 +24,10 @@
                 position: relative;
             }
 
+            .botonimagen {
+                width: 10%;
+                height: 20%;
+            }
 
             .camera-canvas {
                 position: absolute;
@@ -124,7 +128,7 @@
 
     </head>
 
-<body >
+<body>
 
     <div id="info" style='display:none'>
     </div>
@@ -148,26 +152,29 @@
             <canvas id="keypoints" class="camera-canvas"></canvas>
         </div>
 
-        <canvas  style="background-image:url(1939.jpg)" class="illustration-canvas"> 
+        <canvas style="background-image:url(1939.jpg)" class="illustration-canvas">
         </canvas>
-  <button id="cambioFondo" onclick="cambiarFondoDocumento()"> Cambiar Fondo</button>
-  <button id="cambioFondo" onclick="cambiarFondoDocumento2()"> Cambiar Fondo 2</button>
+        <button class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento()"> <img
+                src="https://th.bing.com/th/id/R.a84f2776d822e0301331456e870c1a76?rik=dvjNyAMbMXOxNw&pid=ImgRaw&r=0"
+                height="80" width="100" /></button>
 
-  <script>
-      function cambiarFondoDocumento(){
-          let body = document.getElementsByClassName('illustration-canvas')[0];
-        body.style.backgroundImage="url('https://th.bing.com/th/id/R.a84f2776d822e0301331456e870c1a76?rik=dvjNyAMbMXOxNw&pid=ImgRaw&r=0')";
+        <button id="cambioFondo" onclick="cambiarFondoDocumento2()"> Cambiar Fondo 2</button>
 
-        }
+        <script>
+            function cambiarFondoDocumento() {
+                let body = document.getElementsByClassName('illustration-canvas')[0];
+                body.style.backgroundImage = "url('https://th.bing.com/th/id/R.a84f2776d822e0301331456e870c1a76?rik=dvjNyAMbMXOxNw&pid=ImgRaw&r=0')";
 
-        function cambiarFondoDocumento2(){
-          let body = document.getElementsByClassName('illustration-canvas')[0];
-        body.style.backgroundImage="url('https://th.bing.com/th/id/OIP.nbHriSE7e7QmTeYFSXM24wHaEs?pid=ImgDet&rs=1')";
+            }
 
-        }
+            function cambiarFondoDocumento2() {
+                let body = document.getElementsByClassName('illustration-canvas')[0];
+                body.style.backgroundImage = "url('https://th.bing.com/th/id/OIP.nbHriSE7e7QmTeYFSXM24wHaEs?pid=ImgDet&rs=1')";
 
-      
-  </script>
+            }
+
+
+        </script>
         <!-- <button style="width: 100px; height: 50px;" onclick="openFullscreen();">Open Fullscreen</button>
         <script>
             let fullscreen = document.querySelector("canvas");
@@ -185,4 +192,5 @@
     <script src="camera.js"></script>
 
 </body>
+
 </html>
