@@ -113,7 +113,7 @@ const defaultStride = 16;
 const defaultInputResolution = 200;
 
 const guiState = {
-  avatarSVG: Object.keys(avatarSvgs)[0],
+  Personaje: Object.keys(avatarSvgs)[0],
   debug: {
     showDetectionDebug: true,
     showIllustrationDebug: false,
@@ -131,9 +131,9 @@ function setupGui(cameras) {
 
   const gui = new dat.GUI({width: 180});
 
-  let multi = gui.addFolder('Image');
-  gui.add(guiState, 'avatarSVG', Object.keys(avatarSvgs)).onChange(() => parseSVG(avatarSvgs[guiState.avatarSVG]));
-  multi.open();
+  // let multi = gui.addFolder('Escoja un personaje');
+  gui.add(guiState, 'Personaje', Object.keys(avatarSvgs)).onChange(() => parseSVG(avatarSvgs[guiState.Personaje]));
+  // multi.open();
 
 /*  let output = gui.addFolder('Controles');
   output.add(guiState.debug, 'showDetectionDebug');
@@ -284,8 +284,7 @@ export async function bindPage() {
     video = await loadVideo();
   } catch (e) {
     let info = document.getElementById('info');
-    info.textContent = 'this device type is not supported yet, ' +
-      'or this browser does not support video capture: ' + e.toString();
+    info.textContent = 'Permita el acceso a su cámara porfavor ';
     info.style.display = 'block';
     throw e;
   }

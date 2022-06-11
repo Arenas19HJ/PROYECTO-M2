@@ -1,16 +1,34 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <title>Document</title>
 
     <head>
         <title>PoseNet - Camera Feed Demo</title>
         <style>
+            :root {
+                --fuente: 'Quicksand', sans-serif;
+            }
+
+            .titulo-fondo {
+                background-color: white;
+            }
+
+            .titulo-fondo h1 {
+                margin-left: 2%;
+            }
+
             body {
+                background-color: lightblue;
+                overflow-x: hidden;
+                font-family: var(--fuente);
                 display: flex;
                 flex-direction: column;
                 /*  align-items: center;
@@ -20,13 +38,40 @@
             .canvas-container {
                 width: 100%;
                 max-width: 100%;
-                display: flex;
                 position: relative;
+                display: flex;
+                padding: 1%;
             }
 
-            .botonimagen {
-                width: 10%;
-                height: 20%;
+            .canvas-container h3 {
+                margin-left: 10%
+            }
+
+            .canvas-container .botonimagen {
+                width: 180px;
+                height: 100px;
+                border-radius: 10px;
+                background-size: cover;
+                border: white solid;
+            }
+
+            .scroll-fondo {
+                margin-left: 10%;
+                overflow-x: hidden;
+                width: 200px;
+                height: 350px;
+                line-height: 2em;
+                border-radius: 5px;
+                background-color: white;
+                padding: 5px;
+            }
+
+            .btn-full {
+                font-family: var(--fuente);
+                font-weight: bold;
+                margin-left: 28%;
+                margin-top: 8%;
+                height: 50px;
             }
 
             .camera-canvas {
@@ -124,7 +169,9 @@
             }
         </style>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <h1>Animacion2D</h1>
+        <div class="titulo-fondo">
+            <h1>Animacion2D</h1>
+        </div>
 
     </head>
 
@@ -132,15 +179,14 @@
 
     <div id="info" style='display:none'>
     </div>
-    <div id="loading" style='position: relative; left: 0'>
+    <div id="loading" style='position: relative; margin-left: 2%; margin-top: 1%;'>
         <span class="spinner-text" id="status">
-            Loading PoseNet model...
+            Cargando animaciónn...
         </span>
         <div class="sk-spinner sk-spinner-pulse"></div>
     </div>
     <div class=" col-12 canvas-container">
-
-        <div id='main' style='display:none'>
+        <div  id='main' >
             <video id="video" playsinline style=" -moz-transform: scaleX(-1);
             -o-transform: scaleX(-1);
             -webkit-transform: scaleX(-1);
@@ -151,16 +197,78 @@
             <canvas id="output" class="camera-canvas"></canvas>
             <canvas id="keypoints" class="camera-canvas"></canvas>
         </div>
-
-        <canvas style="background-image:url(1939.jpg)" class="illustration-canvas">
+             <canvas style="background-image:url(1939.jpg)" id="illustration-canvas" class="illustration-canvas">
         </canvas>
-        <button class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento()"> <img
-                src="https://th.bing.com/th/id/R.a84f2776d822e0301331456e870c1a76?rik=dvjNyAMbMXOxNw&pid=ImgRaw&r=0"
-                height="80" width="100" /></button>
+     
+        <div>
+            <div>
+                <h3>Fondos</h3>
+            </div>
+            <div class="scroll-fondo">
+                <div>
+                    <button
+                        style="background-image: url(https://th.bing.com/th/id/R.a84f2776d822e0301331456e870c1a76?rik=dvjNyAMbMXOxNw&pid=ImgRaw&r=0)"
+                        class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento()"> </button>
+                </div>
+                <div>
+                    <button
+                        style="background-image:url(https://th.bing.com/th/id/OIP.nbHriSE7e7QmTeYFSXM24wHaEs?pid=ImgDet&rs=1i)"
+                        class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento2()"></button>
+                </div>
+                <div>
+                    <button
+                        style="background-image: url(https://th.bing.com/th/id/R.a84f2776d822e0301331456e870c1a76?rik=dvjNyAMbMXOxNw&pid=ImgRaw&r=0)"
+                        class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento()"> </button>
+                </div>
+                <div>
+                    <button
+                        style="background-image:url(https://th.bing.com/th/id/OIP.nbHriSE7e7QmTeYFSXM24wHaEs?pid=ImgDet&rs=1i)"
+                        class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento2()"></button>
+                </div>
+                <div>
+                    <button
+                        style="background-image: url(https://th.bing.com/th/id/R.a84f2776d822e0301331456e870c1a76?rik=dvjNyAMbMXOxNw&pid=ImgRaw&r=0)"
+                        class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento()"> </button>
+                </div>
+                <div>
+                    <button
+                        style="background-image:url(https://th.bing.com/th/id/OIP.nbHriSE7e7QmTeYFSXM24wHaEs?pid=ImgDet&rs=1i)"
+                        class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento2()"></button>
+                </div>
+                <div>
+                    <button
+                        style="background-image: url(https://th.bing.com/th/id/R.a84f2776d822e0301331456e870c1a76?rik=dvjNyAMbMXOxNw&pid=ImgRaw&r=0)"
+                        class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento()"> </button>
+                </div>
+                <div>
+                    <button
+                        style="background-image:url(https://th.bing.com/th/id/OIP.nbHriSE7e7QmTeYFSXM24wHaEs?pid=ImgDet&rs=1i)"
+                        class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento2()"></button>
+                </div>
+            </div>
+            <div class="fullscreen">
+                <button class="btn-full" 
+                    onclick="openFullscreen(document.documentElement);">Pantalla completa</button>
+            </div>
 
-        <button id="cambioFondo" onclick="cambiarFondoDocumento2()"> Cambiar Fondo 2</button>
+        </div>
 
         <script>
+
+
+            var elem = document.getElementsByClassName('illustration-canvas')[0];
+
+            function openFullscreen() {
+
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.webkitRequestFullscreen) { /* Safari */
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { /* IE11 */
+                    elem.msRequestFullscreen();
+                }
+            }
+
             function cambiarFondoDocumento() {
                 let body = document.getElementsByClassName('illustration-canvas')[0];
                 body.style.backgroundImage = "url('https://th.bing.com/th/id/R.a84f2776d822e0301331456e870c1a76?rik=dvjNyAMbMXOxNw&pid=ImgRaw&r=0')";
@@ -175,22 +283,10 @@
 
 
         </script>
-        <!-- <button style="width: 100px; height: 50px;" onclick="openFullscreen();">Open Fullscreen</button>
-        <script>
-            let fullscreen = document.querySelector("canvas");
-            let button = document.querySelector("button");
 
-            button.addEventListener("click", () => {
-                if (!document.fullscreenElement) {
-                    fullscreen?.requestFullscreen();
-                } else {
-                    document.exitFullscreen();
-                }
-            });
-        </script> -->
     </div>
     <script src="camera.js"></script>
 
 </body>
 
-</html>
+</html> -->
