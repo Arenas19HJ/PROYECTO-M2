@@ -8,178 +8,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
+  <title>Amigo 2D</title>
   <head>
     <title>PoseNet - Camera Feed Demo</title>
-    <style>
-      :root {
-        --fuente: 'Quicksand', sans-serif;
-      }
-
-      body {
-        background-color: lightblue;
-        overflow-x: hidden;
-        font-family: var(--fuente);
-        display: flex;
-        flex-direction: column;
-        /*  align-items: center;
-                justify-content: center;*/
-      }
-
-      .fondo1 {
-        margin-left: 12%;
-      }
-
-      .fondo2 {
-        margin-left: 25%;
-        margin-top: 30%;
-      }
-
-      .canvas-container {
-        width: 100%;
-        max-width: 100%;
-        position: relative;
-        display: flex;
-        padding: 1%;
-      }
-
-
-      .canvas-container .titulo {
-        margin-top: -16px;
-      }
-
-      .canvas-container h3 {
-        margin-left: 100%
-      }
-
-      .canvas-container .botonimagen {
-        width: 150px;
-        height: 110px;
-        border-radius: 10px;
-        background-size: cover;
-        border: white solid;
-        margin-left: 10%;
-        margin-bottom: 5%;
-      }
-
-      .fullscreen {
-        margin-left: -215px;
-        margin-top: -55px;
-      }
-
-      .btn-full {
-        font-weight: bold;
-        height: 50px;
-        width: 50px;
-        border: 0;
-        background-size: cover;
-        border-radius: 50%;
-      }
-
-      .camera-canvas {
-        position: absolute;
-        transform: scale(0.5, 0.5);
-        transform-origin: 0 0;
-        left: -350px;
-        top: 50px;
-        border: 2px solid #610f0f;
-        display: none;
-      }
-
-      #main {
-        left: 0;
-        top: 0;
-        position: absolute;
-      }
-
-      .illustration-canvas {
-        border-radius: 40px;
-        width: 68%;
-        height: 500px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border: 8px purple solid;
-      }
-
-
-      .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        color: black;
-      }
-
-      .footer-text {
-        max-width: 600px;
-        text-align: center;
-        margin: auto;
-      }
-
-      @media only screen and (max-width: 600px) {
-
-        .footer-text,
-        .dg {
-          display: none;
-        }
-      }
-
-      /*
-         *  The following loading spinner CSS is from SpinKit project
-         *  https://github.com/tobiasahlin/SpinKit
-         */
-      .sk-spinner-pulse {
-        width: 20px;
-        height: 20px;
-        margin: auto 10px;
-        float: left;
-        background-color: #333;
-        border-radius: 100%;
-        -webkit-animation: sk-pulseScaleOut 1s infinite ease-in-out;
-        animation: sk-pulseScaleOut 1s infinite ease-in-out;
-      }
-
-      @-webkit-keyframes sk-pulseScaleOut {
-        0% {
-          -webkit-transform: scale(0);
-          transform: scale(0);
-        }
-
-        100% {
-          -webkit-transform: scale(1.0);
-          transform: scale(1.0);
-          opacity: 0;
-
-        }
-      }
-
-      @keyframes sk-pulseScaleOut {
-        0% {
-          -webkit-transform: scale(0);
-          transform: scale(0);
-        }
-
-        100% {
-          -webkit-transform: scale(1.0);
-          transform: scale(1.0);
-          opacity: 0;
-        }
-      }
-
-      .spinner-text {
-        float: left;
-      }
-    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <div class="titulo-fondo">
       <img src="logo.png" style="width: 30%">
     </div>
-
   </head>
 
 <body>
-
   <div id="info" style='display:none'>
   </div>
   <div id="loading" style='position: relative; margin-left: 2%; margin-top: 1%;'>
@@ -200,33 +44,34 @@
       <canvas id="output" class="camera-canvas"></canvas>
       <canvas id="keypoints" class="camera-canvas"></canvas>
     </div>
-    <canvas style="background-image:url(1939.jpg)" id="illustration-canvas" class="illustration-canvas">
+   <canvas style="background-color: #fff;" id="illustration-canvas" class="illustration-canvas">
     </canvas>
+   
 
     <div card >
       <div class="titulo">
-        <h3>Fondos</h3>
+        <h3>FONDOS</h3>
       </div>
       <div class="fondo1">
         <div>
           <button
-            style="background-image: url(https://th.bing.com/th/id/R.a84f2776d822e0301331456e870c1a76?rik=dvjNyAMbMXOxNw&pid=ImgRaw&r=0)"
+            style="background-image: url(https://static.vecteezy.com/system/resources/previews/000/300/846/large_2x/fun-amusement-park-background-vector.jpg)"
             class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento()"> </button>
         </div>
         <div>
           <button
-            style="background-image:url(https://th.bing.com/th/id/OIP.nbHriSE7e7QmTeYFSXM24wHaEs?pid=ImgDet&rs=1i)"
-            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento2()"></button>
+            style="background-image:url(https://static.vecteezy.com/system/resources/previews/000/359/971/non_2x/vector-a-giraffe-family-in-the-zoo.jpg)"
+            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento1()"></button>
         </div>
         <div>
           <button
-            style="background-image: url(https://th.bing.com/th/id/R.a84f2776d822e0301331456e870c1a76?rik=dvjNyAMbMXOxNw&pid=ImgRaw&r=0)"
-            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento()"> </button>
+            style="background-image: url(https://img2.freepng.es/20180323/gzq/kisspng-island-animation-cartoon-sea-5ab4804ff306a6.3891264015217787679954.jpg)"
+            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento2()"> </button>
         </div>
         <div>
           <button
-            style="background-image:url(https://th.bing.com/th/id/OIP.nbHriSE7e7QmTeYFSXM24wHaEs?pid=ImgDet&rs=1i)"
-            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento2()"></button>
+            style="background-image:url(https://i.ytimg.com/vi/c0wDJ_QWyTE/maxresdefault.jpg)"
+            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento3()"></button>
         </div>
       </div>
     </div>
@@ -235,22 +80,22 @@
         <div>
           <button
             style="background-image: url(https://th.bing.com/th/id/R.a84f2776d822e0301331456e870c1a76?rik=dvjNyAMbMXOxNw&pid=ImgRaw&r=0)"
-            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento()"> </button>
+            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento4()"> </button>
         </div>
         <div>
           <button
-            style="background-image:url(https://th.bing.com/th/id/OIP.nbHriSE7e7QmTeYFSXM24wHaEs?pid=ImgDet&rs=1i)"
-            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento2()"></button>
+            style="background-image:url(https://th.bing.com/th/id/R.7fb3ff6e5954d63bebcfc5cc377bf2ba?rik=3%2f%2fhUqNY7yHswA&pid=ImgRaw&r=0)"
+            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento5()"></button>
         </div>
         <div>
           <button
-            style="background-image: url(https://th.bing.com/th/id/R.a84f2776d822e0301331456e870c1a76?rik=dvjNyAMbMXOxNw&pid=ImgRaw&r=0)"
-            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento()"> </button>
+            style="background-image: url(https://static.vecteezy.com/system/resources/previews/000/298/673/non_2x/a-dog-and-cat-in-a-garden-vector.jpg)"
+            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento6()"> </button>
         </div>
         <div>
           <button
-            style="background-image:url(https://th.bing.com/th/id/OIP.nbHriSE7e7QmTeYFSXM24wHaEs?pid=ImgDet&rs=1i)"
-            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento2()"></button>
+            style="background-image:url(https://i.ytimg.com/vi/7BGSOcKz6Tw/maxresdefault.jpg)"
+            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento7()"></button>
         </div>
       </div>
 
@@ -258,15 +103,10 @@
         <button style="background-image:url(https://th.bing.com/th/id/OIP.BLJNQtSqa8wJw4BgFuRAaAHaHa?pid=ImgDet&rs=1)"
           class="btn-full" onclick="openFullscreen(document.documentElement);"></button>
       </div>
-
-
-
     </div>
 
 
     <script>
-
-
       var elem = document.getElementsByClassName('illustration-canvas')[0];
 
       function openFullscreen() {
@@ -282,20 +122,59 @@
 
       function cambiarFondoDocumento() {
         let body = document.getElementsByClassName('illustration-canvas')[0];
-        body.style.backgroundImage = "url('https://th.bing.com/th/id/R.a84f2776d822e0301331456e870c1a76?rik=dvjNyAMbMXOxNw&pid=ImgRaw&r=0')";
+        body.style.backgroundImage = "url('https://static.vecteezy.com/system/resources/previews/000/300/846/large_2x/fun-amusement-park-background-vector.jpg')";
+      }
 
+      function cambiarFondoDocumento1() {
+        let body = document.getElementsByClassName('illustration-canvas')[0];
+        body.style.backgroundImage = "url('https://static.vecteezy.com/system/resources/previews/000/359/971/non_2x/vector-a-giraffe-family-in-the-zoo.jpg')";
       }
 
       function cambiarFondoDocumento2() {
         let body = document.getElementsByClassName('illustration-canvas')[0];
-        body.style.backgroundImage = "url('https://th.bing.com/th/id/OIP.nbHriSE7e7QmTeYFSXM24wHaEs?pid=ImgDet&rs=1')";
-
+        body.style.backgroundImage = "url('https://img2.freepng.es/20180323/gzq/kisspng-island-animation-cartoon-sea-5ab4804ff306a6.3891264015217787679954.jpg')";
       }
 
+      function cambiarFondoDocumento3() {
+        let body = document.getElementsByClassName('illustration-canvas')[0];
+        body.style.backgroundImage = "url('https://i.ytimg.com/vi/c0wDJ_QWyTE/maxresdefault.jpg')";
+      }
 
+      function cambiarFondoDocumento4() {
+        let body = document.getElementsByClassName('illustration-canvas')[0];
+        body.style.backgroundImage = "url('https://th.bing.com/th/id/R.a84f2776d822e0301331456e870c1a76?rik=dvjNyAMbMXOxNw&pid=ImgRaw&r=0')";
+      }
+
+      function cambiarFondoDocumento5() {
+        let body = document.getElementsByClassName('illustration-canvas')[0];
+        body.style.backgroundImage = "url('https://th.bing.com/th/id/R.7fb3ff6e5954d63bebcfc5cc377bf2ba?rik=3%2f%2fhUqNY7yHswA&pid=ImgRaw&r=0')";
+      }
+
+      function cambiarFondoDocumento6() {
+        let body = document.getElementsByClassName('illustration-canvas')[0];
+        body.style.backgroundImage = "url('https://static.vecteezy.com/system/resources/previews/000/298/673/non_2x/a-dog-and-cat-in-a-garden-vector.jpg')";
+      }
+
+      function cambiarFondoDocumento7() {
+        let body = document.getElementsByClassName('illustration-canvas')[0];
+        body.style.backgroundImage = "url('https://i.ytimg.com/vi/7BGSOcKz6Tw/maxresdefault.jpg')";
+      }
     </script>
 
   </div>
+
+  <div class="dropdown">
+    <button style="margin-left: 75%;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Seleccione un audio
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">El chavo</a>
+      <a class="dropdown-item" href="#">Naruto</a>
+      <a class="dropdown-item" href="#">Robot</a>
+    </div>
+  </div>
+
+
   <script src="camera.js"></script>
 
 </body>

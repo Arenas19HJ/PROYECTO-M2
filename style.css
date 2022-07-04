@@ -1,0 +1,157 @@
+    :root {
+        --fuente: 'Quicksand', sans-serif;
+    }
+    
+    body {
+    background-image: url('https://th.bing.com/th/id/R.de32f416a3e25d78b1c44e2b5461d3da?rik=ctSE%2bX2PacPj%2bA&riu=http%3a%2f%2fwww.solofondos.com%2fwp-content%2fuploads%2f2015%2f12%2ffondo-animado-cielo-azul.jpg&ehk=VtjfVgEUPbKPNI4G%2fyRqwhCvzE3UlImQ1vEOWED68oY%3d&risl=&pid=ImgRaw&r=0');
+    overflow-x: hidden;
+    font-family: var(--fuente);
+    display: flex;
+    flex-direction: column;
+    /*  align-items: center;
+            justify-content: center;*/
+  }
+
+  .fondo1 {
+    margin-left: 12%;
+  }
+
+  .fondo2 {
+    margin-left: 25%;
+    margin-top: 30%;
+  }
+
+  .canvas-container {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    display: flex;
+    padding: 1%;
+  }
+
+
+  .canvas-container .titulo {
+    margin-top: -16px;
+  }
+
+  .canvas-container h3 {
+    margin-left: 100%
+  }
+
+  .canvas-container .botonimagen {
+    width: 150px;
+    height: 110px;
+    border-radius: 10px;
+    background-size: cover;
+    border: white solid;
+    margin-left: 10%;
+    margin-bottom: 5%;
+  }
+
+  .fullscreen {
+    margin-left: -215px;
+    margin-top: -55px;
+  }
+
+  .btn-full {
+    font-weight: bold;
+    height: 50px;
+    width: 50px;
+    border: 0;
+    background-size: cover;
+    border-radius: 50%;
+  }
+
+  .camera-canvas {
+    position: absolute;
+    transform: scale(0.5, 0.5);
+    transform-origin: 0 0;
+    left: -350px;
+    top: 50px;
+    border: 2px solid #610f0f;
+    display: none;
+  }
+
+  #main {
+    left: 0;
+    top: 0;
+    position: absolute;
+  }
+
+  .illustration-canvas {
+    border-radius: 40px;
+    width: 68%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 8px purple solid;
+  }
+
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+  }
+
+  .footer-text {
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+  }
+
+  @media only screen and (max-width: 600px) {
+
+    .footer-text,
+    .dg {
+      display: none;
+    }
+  }
+
+  /*
+     *  The following loading spinner CSS is from SpinKit project
+     *  https://github.com/tobiasahlin/SpinKit
+     */
+  .sk-spinner-pulse {
+    width: 20px;
+    height: 20px;
+    margin: auto 10px;
+    float: left;
+    background-color: #333;
+    border-radius: 100%;
+    -webkit-animation: sk-pulseScaleOut 1s infinite ease-in-out;
+    animation: sk-pulseScaleOut 1s infinite ease-in-out;
+  }
+
+  @-webkit-keyframes sk-pulseScaleOut {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+
+    100% {
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+      opacity: 0;
+
+    }
+  }
+
+  @keyframes sk-pulseScaleOut {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+
+    100% {
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+      opacity: 0;
+    }
+  }
+
+  .spinner-text {
+    float: left;
+  }

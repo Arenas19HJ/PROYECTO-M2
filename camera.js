@@ -35,7 +35,11 @@ import * as abstractSVG from './resources/illustration/abstract.svg';
 import * as blathersSVG from './resources/illustration/blathers.svg';
 import * as tomNookSVG from './resources/illustration/tom-nook.svg';
 import * as primeroSVG from './resources/illustration/primero.svg';
-
+import * as primero1SVG from './resources/illustration/primero1.svg';
+import * as primero3SVG from './resources/illustration/primero3.svg';
+import * as robotSVG from './resources/illustration/robot.svg';
+import * as perroSVG from './resources/illustration/perro.svg';
+import * as mariobrossSVG from './resources/illustration/mariobross.svg';
 
 
 // Camera stream video element
@@ -47,8 +51,8 @@ let videoHeight = 300;
 let faceDetection = null;
 let illustration = null;
 let canvasScope;
-let canvasWidth = 1100;
-let canvasHeight = 700;
+let canvasWidth = 900;
+let canvasHeight = 800;
 
 // ML models
 let facemesh;
@@ -66,12 +70,13 @@ const avatarSvgs = {
   'Buho': blathersSVG.default,
   'Oso': tomNookSVG.default,
   'Niño 2': primeroSVG.default,
+  'Niño 3': primero1SVG.default,
+  // 'Niño 4': primero3SVG.default,
+  'Robot': robotSVG.default,
+  'perro': perroSVG.default,
+  //'mario': mariobrossSVG.default,
 };
 
-/**
- * Loads a the camera to be used in the demo
- *
- */
 async function setupCamera() {
   if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
     throw new Error(
@@ -145,8 +150,10 @@ function setupGui(cameras) {
  * Sets up a frames per second panel on the top-left of the window
  */
 function setupFPS() {
+
   stats.showPanel(0);  // 0: fps, 1: ms, 2: mb, 3+: custom
   document.getElementById('main').appendChild(stats.dom);
+
 }
 
 /**
@@ -290,7 +297,7 @@ export async function bindPage() {
   }
 
   setupGui([], posenet);
-  setupFPS();
+  
   
   toggleLoadingUI(false);
   detectPoseInRealTime(video, posenet);
