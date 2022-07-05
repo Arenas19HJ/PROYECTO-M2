@@ -73,7 +73,7 @@ const avatarSvgs = {
   'Niño 3': primero1SVG.default,
   // 'Niño 4': primero3SVG.default,
   'Robot': robotSVG.default,
-  'perro': perroSVG.default,
+  'Perro': perroSVG.default,
   //'mario': mariobrossSVG.default,
 };
 
