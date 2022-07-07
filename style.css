@@ -3,7 +3,7 @@
     }
     
     body {
-    background-image: url('https://th.bing.com/th/id/R.de32f416a3e25d78b1c44e2b5461d3da?rik=ctSE%2bX2PacPj%2bA&riu=http%3a%2f%2fwww.solofondos.com%2fwp-content%2fuploads%2f2015%2f12%2ffondo-animado-cielo-azul.jpg&ehk=VtjfVgEUPbKPNI4G%2fyRqwhCvzE3UlImQ1vEOWED68oY%3d&risl=&pid=ImgRaw&r=0');
+    background-image: url('imagenes/nubes.jpg');
     overflow-x: hidden;
     font-family: var(--fuente);
     display: flex;
@@ -154,4 +154,36 @@
 
   .spinner-text {
     float: left;
+  }
+
+  .imagen_1 {
+    background-image: url('imagenes/imagen_1.jpg');
+  }
+
+  .imagen_2 {
+    background-image: url('imagenes/imagen_2.jpg');
+  }
+
+  .imagen_3 {
+    background-image: url('imagenes/imagen_3.jpg');
+  }
+
+  .imagen_4 {
+    background-image: url('imagenes/imagen_4.jpg');
+  }
+
+  .imagen_5 {
+    background-image: url('imagenes/imagen_5.jpg');
+  }
+
+  .imagen_6 {
+    background-image: url('imagenes/imagen_6.jpg');
+  }
+
+  .imagen_7 {
+    background-image: url('imagenes/imagen_7.jpg');
+  }
+
+  .imagen_8 {
+    background-image: url('imagenes/imagen_8.jpg');
   }

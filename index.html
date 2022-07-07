@@ -51,23 +51,23 @@
       <div class="fondo1">
         <div>
           <button
-            style="background-image: url(https://static.vecteezy.com/system/resources/previews/000/300/846/large_2x/fun-amusement-park-background-vector.jpg)"
-            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento()"> </button>
+            style="background-image:url('imagenes/imagen_1.jpg');cursor: pointer;"
+            class="botonimagen " id="img1"></button>
         </div>
         <div>
           <button
-            style="background-image:url(https://static.vecteezy.com/system/resources/previews/000/359/971/non_2x/vector-a-giraffe-family-in-the-zoo.jpg)"
-            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento1()"></button>
+            style="background-image: url('imagenes/imagen_2.jpg');cursor: pointer;"
+            class="botonimagen " id="img2"> </button>
         </div>
         <div>
           <button
-            style="background-image: url(https://img2.freepng.es/20180323/gzq/kisspng-island-animation-cartoon-sea-5ab4804ff306a6.3891264015217787679954.jpg)"
-            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento2()"> </button>
+            style="background-image:url('imagenes/imagen_3.jpg');cursor: pointer;"
+            class="botonimagen " id="img3"></button>
         </div>
         <div>
           <button
-            style="background-image:url(https://i.ytimg.com/vi/c0wDJ_QWyTE/maxresdefault.jpg)"
-            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento3()"></button>
+            style="background-image:url('imagenes/imagen_4.jpg');cursor: pointer;"
+            class="botonimagen " id="img4"></button>
         </div>
       </div>
     </div>
@@ -75,33 +75,32 @@
       <div class="fondo2">
         <div>
           <button
-            style="background-image: url(https://th.bing.com/th/id/R.a84f2776d822e0301331456e870c1a76?rik=dvjNyAMbMXOxNw&pid=ImgRaw&r=0)"
-            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento4()"> </button>
+            style="background-image: url('imagenes/imagen_5.jpg');cursor: pointer;"
+            class="botonimagen " id="img5"> </button>
         </div>
         <div>
           <button
-            style="background-image:url(https://th.bing.com/th/id/R.7fb3ff6e5954d63bebcfc5cc377bf2ba?rik=3%2f%2fhUqNY7yHswA&pid=ImgRaw&r=0)"
-            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento5()"></button>
+            style="background-image:url('imagenes/imagen_6.jpg');cursor: pointer;"
+            class="botonimagen " id="img6"></button>
         </div>
         <div>
           <button
-            style="background-image: url(https://static.vecteezy.com/system/resources/previews/000/298/673/non_2x/a-dog-and-cat-in-a-garden-vector.jpg)"
-            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento6()"> </button>
+            style="background-image: url('imagenes/imagen_7.jpg');cursor: pointer;"
+            class="botonimagen " id="img7"> </button>
         </div>
         <div>
           <button
-            style="background-image:url(https://i.ytimg.com/vi/7BGSOcKz6Tw/maxresdefault.jpg)"
-            class="botonimagen " id="cambioFondo" onclick="cambiarFondoDocumento7()"></button>
+            style="background-image:url('imagenes/imagen_8.jpg');cursor: pointer;"
+            class="botonimagen " id="img8"></button>
         </div>
+
       </div>
 
       <div class="fullscreen">
-        <button style="background-image:url(https://th.bing.com/th/id/OIP.BLJNQtSqa8wJw4BgFuRAaAHaHa?pid=ImgDet&rs=1)"
+        <button style="background-image:url('imagenes/expandir.jpg');cursor: pointer;"
           class="btn-full" onclick="openFullscreen(document.documentElement);"></button>
       </div>
     </div>
-
-
     <script>
       var elem = document.getElementsByClassName('illustration-canvas')[0];
 
@@ -109,14 +108,15 @@
 
         if (elem.requestFullscreen) {
           elem.requestFullscreen();
-        } else if (elem.webkitRequestFullscreen) { /* Safari */
+        } else if (elem.webkitRequestFullscreen) { 
           elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { /* IE11 */
+        } else if (elem.msRequestFullscreen) { 
           elem.msRequestFullscreen();
         }
       }
-
-      function cambiarFondoDocumento() {
+      </script>
+      <!-- <script>  
+        function cambiarFondoDocumento() {
         let body = document.getElementsByClassName('illustration-canvas')[0];
         body.style.backgroundImage = "url('https://static.vecteezy.com/system/resources/previews/000/300/846/large_2x/fun-amusement-park-background-vector.jpg')";
       }
@@ -155,12 +155,13 @@
         let body = document.getElementsByClassName('illustration-canvas')[0];
         body.style.backgroundImage = "url('https://i.ytimg.com/vi/7BGSOcKz6Tw/maxresdefault.jpg')";
       }
-    </script>
-
+    </script> -->
+  
   </div>
-
+  <!-- <script src="imagenes.js"></script> -->
+  <script src="imagenes2.js"></script>
   <script src="camera.js"></script>
 
 </body>
-
+  
 </html>
