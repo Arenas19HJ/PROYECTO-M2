@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded',function(){
     cambiarfondo();
+    openFullscreen();
 
 })
 
@@ -101,5 +102,25 @@ function cambiarfondo(){
         id_img.classList.remove('imagen_7');
         id_img.classList.add('imagen_8');
 
+    }
+}
+
+
+
+
+
+function openFullscreen() {
+    var elem = document.querySelector('#illustration-canvas');
+    const buttonExp = document.querySelector('#exp1');
+    
+    buttonExp.onclick=function(){
+
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { 
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { 
+          elem.msRequestFullscreen();
+        }
     }
 }
